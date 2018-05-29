@@ -1,0 +1,30 @@
+﻿@using CandidateTracker.Data
+@model CandidateTracker.Web.Models.CandidatesViewModel
+
+<h2>@Model.Type</h2>
+<button class="btn btn-success notes-toggle">Toggle Notes</button>
+<table class="table table-hover table-bordered table-striped">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Notes</th>
+    </tr>
+    @foreach (Candidate candidate in Model.Candidates)
+    {
+        <tr>
+            <td>@candidate.FirstName</td>
+            <td>@candidate.LastName</td>
+            <td>@candidate.PhoneNumber</td>
+            <td>@candidate.Email</td>
+            <td>@candidate.Notes</td>
+        </tr>
+    }
+</table>
+
+@section scripts
+{
+    <script src="/Scripts/notes-toggle.js"></script>
+}
+

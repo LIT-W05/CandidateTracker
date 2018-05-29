@@ -1,0 +1,22 @@
+﻿@using CandidateTracker.Data
+@model CandidateTracker.Web.Models.CandidatesViewModel
+
+<table class="table table-hover table-bordered table-striped">
+    <tr>
+        <th></th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    @foreach (Candidate candidate in Model.Candidates)
+    {
+        <tr>
+            <td><a href="/home/details?id=@candidate.Id">View Details</a></td>
+            <td>@candidate.FirstName</td>
+            <td>@candidate.LastName</td>
+            <td>@candidate.PhoneNumber</td>
+            <td>@candidate.Email</td>
+        </tr>
+    }
+</table>
